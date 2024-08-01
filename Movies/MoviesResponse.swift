@@ -11,7 +11,7 @@ struct MoviesResponse: Decodable {
     let results: [Movie]    // movie API endpoint returns array of movie objects
 }
 
-struct Movie: Decodable, Identifiable, Hashable {
+struct Movie: Codable, Identifiable, Hashable {
     let id: Int
     let title: String
     let releaseDate: String
