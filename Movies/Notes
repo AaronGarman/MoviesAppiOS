@@ -1,22 +1,18 @@
 HIGH
-- firebase database to add and delete movies, no update - manager obj made right in detail view?
-- fav button do like lab 7 for add and delete movies from db - button in detail screen
+- firebase database to add and delete movies, no update - manager obj made right in detail view? fig id and init movies as favs on app start
 
 MEDIUM
-- 3 rows instead of 2 - see pic n change dimensions
-- detail view - apple guide example for neg push up poster
+- favorite list setup just like reg - maybe same vc but pass in array? or copy paste. movie api new file as movie manager? or could do movie grid as its own view n reuse?
 
 LOW
-- favorite list setup just like reg - maybe same vc but pass in array? or copy paste. movie api new file as movie manager? or could do movie grid as its own view n reuse?
-- top nav bar for now playing + upcoming movies - do as overlay? anchor at top - see gpt*
-- 2nd tab just like now playing but with upcoming endpoint*
+- top nav bar for now playing + upcoming movies - do as overlay? anchor at top - see gpt* - if do upcoming, change released v release in detail view? 2nd tab just like now playing but with upcoming endpoint
 
 
 GENERAL
-- comments in n out - any for end elements?
-- check 3 labs for examples
-- no push + delete user file binary, notes here, and ds store? other swift ui file too like directory one?
+- comments in n out
+- less hard coded values?
 
 EXTRA
 - 3rd tab w/ map view for theaters - map points of interest built in?
 - multiple pages pull from api?
+- no push + delete user file binary, notes here, and ds store? other swift ui file too like directory one?

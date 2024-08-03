@@ -77,3 +77,5 @@ class FavMoviesManager {
 
 
 // name fav movie vs just movie?
+
+// will it save for every user all same list or diff?

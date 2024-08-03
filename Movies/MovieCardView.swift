@@ -16,7 +16,7 @@ struct MovieCard: View {
         VStack {
             // Rectangle to hold contents of card
             Rectangle()
-                .frame(width: 150, height: 250)
+                .frame(width: 110, height: 200)
                 //.cornerRadius(10.0)
                 .foregroundColor(.white)
                 .shadow(color: .black, radius: 4, x: -2, y: 2)
@@ -33,6 +33,7 @@ struct MovieCard: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 //.cornerRadius(10.0)
+                                .frame(width: 110) // fioxes escape one that keeps messing up?
                         } placeholder: {
                             Color(.systemGray4)
                         }
@@ -42,8 +43,9 @@ struct MovieCard: View {
                                 .frame(width: 15)
                             Text(String(format: "%.1f", movie.voteAverage) + "/10")
                                 .foregroundStyle(.black)
+                                .font(.system(size: 14))
                             Image(systemName: "star.fill")
-                                .imageScale(.medium)
+                                .imageScale(.small)
                                 .foregroundColor(.yellow)
                         }
                         .padding(.bottom, 8)
@@ -53,11 +55,13 @@ struct MovieCard: View {
             Text(movie.title)
                 .foregroundStyle(.black)
                 .multilineTextAlignment(.center)
+                .font(.system(size: 14))
                 //.frame(width: 150, height: 50)
-                .frame(width: 150)
-                .padding(.top, 2)
+                .frame(width: 110, height: 50)
+                .offset(y: -4)
+                //.padding(.top, 2)
         }
-       .frame(width: 150, height: 250)
+       .frame(width: 110, height: 150) // 100, 125
         //.padding(.top, 16)
     }
 }

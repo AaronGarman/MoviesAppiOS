@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MovieDetailView: View {
     
-    @State var favMoviesManager = FavMoviesManager() // why state here? see lab?
+    @State var favMoviesManager = FavMoviesManager()
     @State var isFavorite = false
     
     let movie: Movie
@@ -21,12 +21,7 @@ struct MovieDetailView: View {
                 AsyncImage(url: urlString) { image in
                     image
                         .resizable()
-                        .aspectRatio(contentMode: .fill) // fit v fill
-                        .frame(width: 400, height: 200)
-                    //.padding(.leading, 10)
-                    //.ignoresSafeArea() maybe try cover top?
-                    //.cornerRadius(10.0)
-                    //.defaultScrollAnchor(.top)
+                        .aspectRatio(contentMode: .fill)
                         .overlay(alignment: .bottomTrailing) {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 25.0)
@@ -41,20 +36,12 @@ struct MovieDetailView: View {
                                         favMoviesManager.deleteFavMovie(movie: movie)
                                     }
                                 } label: {
-                                    if isFavorite { // do var string then image, state?
-                                        Image(systemName: "heart.fill")
-                                            .imageScale(.large)
-                                            .tint(.red)
-                                    }
-                                    else {
-                                        Image(systemName: "heart")
-                                            .imageScale(.large)
-                                            .tint(.red)
-                                    }
+                                    Image(systemName: isFavorite ? "heart.fill" : "heart")
+                                        .imageScale(.large)
+                                        .tint(.red)
                                 }
                             }
-                            .padding(.trailing, 16)
-                            .padding(.bottom, 4)
+                            .padding([.trailing, .bottom], 12)
                         }
                 } placeholder: {
                     Color(.systemGray4)
@@ -64,72 +51,48 @@ struct MovieDetailView: View {
                     AsyncImage(url: urlString) { image in
                         image
                             .resizable()
-                            .aspectRatio(contentMode: .fill) // fit v fill
+                            .aspectRatio(contentMode: .fill)
                             .frame(width: 150, height: 225)
-                        //.padding(.leading, 4)
                             .cornerRadius(25.0)
-                            .offset(y: -50)
-                            .padding(.bottom, -50)
-                            .overlay { // was parentheses before
+                            .overlay {
                                 RoundedRectangle(cornerRadius: 25.0)
                                     .stroke(Color.white, lineWidth: 3)
-                                    .offset(y: -50)
-                                    .padding(.bottom, -50)
                             }
                             .shadow(radius: 10)
-                        // maybe move image as overlay somehow?
-                        
-                        
                     } placeholder: {
                         Color(.systemGray4)
                     }
-                    //Spacer()
-                    //.frame(width:20) // less here bring move in?
+                    .offset(y: -60)
+                    .padding(.bottom, -60)
+                    .padding(.leading, 12)
                     VStack(alignment: .leading) {
                         Text(movie.title)
                             .font(.title2)
                             .bold()
-                            .padding(.top, 12)
-                            .frame(height: 100) // maybe no width here? width: 125,
-                        Text("Released: \(movie.releaseDate)") // make into "mar 1, 2023" style. released v release v release date v none
-                        //.padding(4) // these texts bigger?
-                            .padding(.bottom, 4)
-                        //.font(.title3)
-                            .font(.system(size: 18)) // maybe to 20 once resize date?
+                            .padding(.top, 4)
+                        Text("Release: \(movie.formattedDate)")
+                            .padding(.top, 4)
+                            .font(.system(size: 18))
                         HStack {
                             Text(String(format: "%.1f", movie.voteAverage) + "/10")
-                                .foregroundStyle(.black) // need?
-                            //.padding(4)
-                            //.font(.title3)
                                 .font(.system(size: 18))
                             Image(systemName: "star.fill")
                                 .imageScale(.medium)
                                 .foregroundColor(.yellow)
                         }
+                        .padding(.top, 4)
                     }
-                    .padding(.trailing, 16) // need spacer or diff?
-                    .padding(.leading, 12) // turn padding into usable space for title?
-                    //.frame(width: 200)
+                    .padding(.trailing, 12)
+                    .padding(.leading, 8)
+                    Spacer()
                 }
-                //.padding(.leading, 8)
-                HStack {
-                    //Spacer() // just do padding for these 2 spacers?
-                        //.frame(width: 12)
-                    Text(movie.overview) // take out of h stack
-                    //Spacer()
-                        //.frame(width: 12)
-                }
-                .padding(.top, 12)
-                .padding(.leading, 16)
-                .padding(.trailing, 16)
-                //.offset(y: -35) // better way to do this? why is space there?
-            } // outer v stack
-            //.offset(y: -45) // better way?
-            .navigationTitle("Movie Details")
-            .navigationBarTitleDisplayMode(.inline)
-            //.defaultScrollAnchor(.top)
-            .padding(.top, 18)
-        }// scroll
+                Text(movie.overview)
+                    .padding([.top, .leading, .trailing], 16)
+            }
+            .padding(.top, 4)
+        }
+        .navigationTitle("Movie Details")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -143,19 +106,7 @@ struct MovieDetailView: View {
                                  backdropPath: "/xg27NrXi7VXCGUr7MG75UqLl6Vg.jpg"))
 }
 
+// release n stars font tad bigger? title more top padding? eh
+// backdrop image slight blurry?
+
 // do background as gray to keep theme w/ tab bar?
-
-// spacer v padding for some?
-
-// clean up all here, do button as overlay
-
-// maybe put in scroll view? or too much space at top?
-// diff font for stars n released? slight smaller or title slight bigger test. wolverine pic too close, maybe padding or spacer? or just diff font? see all
-// diff date format?
-
-// maybe anchor top image?
-
-
-// give movie poster a bit more space, maybe padding on either stack or image itself? only some tho like garfield, or text maybe bit smaller width?
-
-// release n stars font tad bigger

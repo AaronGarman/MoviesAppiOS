@@ -14,11 +14,31 @@ struct MoviesResponse: Decodable {
 struct Movie: Codable, Identifiable, Hashable {
     let id: Int
     let title: String
-    let releaseDate: String
+    let releaseDate: String// was string, try Date?
     let overview: String
     let voteAverage: Double
     let posterPath: String
     let backdropPath: String
+    
+    var movieId: String { // maybe this as id somehow?
+        String(id)
+    }
+    
+    // convert date to desired format
+    
+    var formattedDate: String {
+        let inputDateFormatter = DateFormatter()
+        inputDateFormatter.dateFormat = "yyyy-MM-dd"
+
+        guard let date = inputDateFormatter.date(from: releaseDate) else {
+            return ""
+        }
+         
+        let outputDateFormatter = DateFormatter()
+        outputDateFormatter.dateFormat = "MMM d, yyyy"
+        
+        return outputDateFormatter.string(from: date)
+    }
     
     // enum to convert snake case to camel case
     
@@ -35,3 +55,6 @@ struct Movie: Codable, Identifiable, Hashable {
 
 // maybe do data as optionals? unwrap in other views. flatmap for images? card n detail views - do as funcs any?
 // hashable protocol no require func like example?
+
+// optionals api? check parks lab?
+// maybe computed property?

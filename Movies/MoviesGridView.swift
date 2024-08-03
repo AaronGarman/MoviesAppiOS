@@ -13,7 +13,7 @@ struct MoviesGridView: View {
     
     @State private var movies: [Movie] = [] // store movies retrieved from API
     
-    let columns = [GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0)]
+    let columns = [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)]
     
     var body: some View {
         NavigationStack {
@@ -25,11 +25,15 @@ struct MoviesGridView: View {
                         ForEach(movies) { movie in
                             NavigationLink(value: movie) {
                                 MovieCard(movie: movie)
-                                    .padding(40)
                             }
+                            .padding(.top, 60)
+                            .padding(.bottom, 60)
                         }
                     }
+                    .padding(.top, 12)
                 }
+                .padding(.leading, 12) // better way these 2? for outside edges
+                .padding(.trailing, 12)
                 .navigationTitle("Movies")
                 .navigationDestination(for: Movie.self) { movie in
                     MovieDetailView(movie: movie)
@@ -109,4 +113,11 @@ struct MoviesGridView: View {
 }
 
 // maybe less space in between cards?
+
+
+// maybe use this as template for reg and favorites
+
+// why when touch in middle skews to one side? here or card self?
+
+// what if movie manager for api grab, but for this view just pass in which array for api ones or fav ones
 
