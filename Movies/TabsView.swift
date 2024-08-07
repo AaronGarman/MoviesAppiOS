@@ -10,6 +10,7 @@ import SwiftUI
 struct TabsView: View {
     
     @Environment(AuthManager.self) var authManager
+    @Environment(FavMoviesManager.self) var favMoviesManager
     
     var body: some View {
         TabView {
@@ -18,6 +19,7 @@ struct TabsView: View {
                     Label("Theaters", systemImage: "movieclapper")
                 }
                 .environment(authManager) // also put sign out button on favs view? pass this in too
+                .environment(favMoviesManager)
             
             MoviesGridView() // will be favs list later
                 .tabItem {

@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MovieDetailView: View {
     
-    @State var favMoviesManager = FavMoviesManager()
+    //@State var favMoviesManager = FavMoviesManager()
+    @Environment(FavMoviesManager.self) var favMoviesManager
     @State var isFavorite = false
     
     let movie: Movie
@@ -39,6 +40,11 @@ struct MovieDetailView: View {
                                     Image(systemName: isFavorite ? "heart.fill" : "heart")
                                         .imageScale(.large)
                                         .tint(.red)
+                                }
+                                .onAppear {
+                                    if favMoviesManager.favMovies.contains(movie) {
+                                        isFavorite = true
+                                    }
                                 }
                             }
                             .padding([.trailing, .bottom], 12)
@@ -86,7 +92,7 @@ struct MovieDetailView: View {
                     .padding(.leading, 8)
                     Spacer()
                 }
-                Text(movie.overview)
+                Text("\(favMoviesManager.favMovies.count)") // movie.overview
                     .padding([.top, .leading, .trailing], 16)
             }
             .padding(.top, 4)

@@ -10,6 +10,7 @@ import SwiftUI
 struct MoviesGridView: View {
     
     @Environment(AuthManager.self) var authManager // test
+    @Environment(FavMoviesManager.self) var favMoviesManager
     
     @State private var movies: [Movie] = [] // store movies retrieved from API
     
@@ -37,6 +38,7 @@ struct MoviesGridView: View {
                 .navigationTitle("Movies")
                 .navigationDestination(for: Movie.self) { movie in
                     MovieDetailView(movie: movie)
+                        .environment(favMoviesManager)
                 }
                 .toolbar {
                     ToolbarItem {

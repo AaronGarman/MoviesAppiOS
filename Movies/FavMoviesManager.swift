@@ -62,14 +62,29 @@ class FavMoviesManager {
     }
     
     func deleteFavMovie(movie: Movie) {
-        let movieId = String(movie.id)
-
-        dataBase.collection("favMovies").document(movieId).delete { error in
+        
+        dataBase.collection("favMovies").whereField("id", isEqualTo: movie.id).getDocuments { querySnapshot, error in
             if let error = error {
-                print("Error deleting movie: \(error)")
+                print("Error querying movie: \(error)")
+                return
+            }
+                
+            guard let documents = querySnapshot?.documents else {
+                print("No documents found for the movie")
+                return
+            }
+                
+            if let document = documents.first {
+                document.reference.delete { error in
+                    if let error = error {
+                        print("Error deleting movie: \(error)")
+                    } else {
+                        print("Movie successfully deleted")
+                        self.getFavMovies() // Optionally refresh the list - need?
+                    }
+                }
             } else {
-                print("Movie successfully deleted")
-                //getMessages() // Optionally refresh the list
+                print("No matching movie found to delete")
             }
         }
     }
@@ -79,3 +94,5 @@ class FavMoviesManager {
 // name fav movie vs just movie?
 
 // will it save for every user all same list or diff?
+
+// clean up, but works. query id instead? or year too?
