@@ -25,7 +25,6 @@ struct MoviesApp: App {
             if authManager.user != nil {
                 // We have a logged in user, go to TabsView
                 TabsView()
-
                     .environment(authManager)
                     .environment(favMoviesManager)
             } else {

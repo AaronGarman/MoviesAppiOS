@@ -16,3 +16,4 @@ EXTRA
 - 3rd tab w/ map view for theaters - map points of interest built in?
 - multiple pages pull from api?
 - no push + delete user file binary, notes here, and ds store? other swift ui file too like directory one?
+- make api values optionals?

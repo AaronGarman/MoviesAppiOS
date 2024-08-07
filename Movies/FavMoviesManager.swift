@@ -90,9 +90,7 @@ class FavMoviesManager {
     }
 }
 
-
 // name fav movie vs just movie?
-
 // will it save for every user all same list or diff?
-
 // clean up, but works. query id instead? or year too?
+// make error msgs sounds same
