@@ -34,6 +34,8 @@ struct TabsView: View {
 #Preview {
     TabsView()
         .environment(AuthManager())
+        .environment(FavMoviesManager())
+        .environment(MovieApiManager())
 }
 
 // more space between icons and top?

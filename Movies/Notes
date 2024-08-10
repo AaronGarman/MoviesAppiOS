@@ -19,6 +19,7 @@ MAYBE
 - upper nav bar - do in tabs view or in grid view reg? depends on if want in favs or not. now playing + upcoming, anchor at top, maybe top tabs view? Release vs released in detail view
 - api values optionals
 - no black font, just diff tint? why blue?
+- Fig favs view - keep as is vs just new view w/ copy, env pass ok? vs reg pass in? vs obs obj array?
 
 EXTRA
 - less hard coded values?
@@ -31,4 +32,3 @@ EXTRA
 - update data on restart from API - pull new values n replace objs in array if diff + sort by release date newest first or oldest?
 - app icon
 - splash screen
-- Fig favs view - keep as is vs just new view w/ copy, env pass ok? vs reg pass in? vs obs obj array?

@@ -72,6 +72,8 @@ struct MoviesGridView: View {
 #Preview {
     MoviesGridView(isNowPlaying: true)
         .environment(AuthManager()) // test - put other 2 auth vars here?
+        .environment(FavMoviesManager())
+        .environment(MovieApiManager())
 }
 
 // maybe less space in between cards?

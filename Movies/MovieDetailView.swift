@@ -113,6 +113,7 @@ struct MovieDetailView: View {
                                  voteAverage: 7.634,
                                  posterPath: "/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",
                                  backdropPath: "/xg27NrXi7VXCGUr7MG75UqLl6Vg.jpg"))
+    .environment(FavMoviesManager())
 }
 
 // release n stars font tad bigger? title more top padding? eh
