@@ -23,6 +23,7 @@
 		2F34458C2C59EA090093ED22 /* Notes in Resources */ = {isa = PBXBuildFile; fileRef = 2F34458B2C59EA090093ED22 /* Notes */; };
 		2F34458E2C59EB880093ED22 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F34458D2C59EB880093ED22 /* LoginView.swift */; };
 		2F3445902C5AE4F50093ED22 /* FavMoviesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F34458F2C5AE4F50093ED22 /* FavMoviesManager.swift */; };
+		2F3445B22C6420160093ED22 /* MovieApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3445B12C6420160093ED22 /* MovieApiManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		2F34458B2C59EA090093ED22 /* Notes */ = {isa = PBXFileReference; lastKnownFileType = text; path = Notes; sourceTree = "<group>"; };
 		2F34458D2C59EB880093ED22 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2F34458F2C5AE4F50093ED22 /* FavMoviesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavMoviesManager.swift; sourceTree = "<group>"; };
+		2F3445B12C6420160093ED22 /* MovieApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieApiManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			children = (
 				2F3445592C59C05A0093ED22 /* MoviesApp.swift */,
 				2F3445872C59C4030093ED22 /* AuthManager.swift */,
+				2F3445B12C6420160093ED22 /* MovieApiManager.swift */,
 				2F34458F2C5AE4F50093ED22 /* FavMoviesManager.swift */,
 				2F34457B2C59C2D50093ED22 /* MoviesResponse.swift */,
 				2F34458D2C59EB880093ED22 /* LoginView.swift */,
@@ -195,6 +198,7 @@
 				2F34457E2C59C30A0093ED22 /* MovieDetailView.swift in Sources */,
 				2F34457C2C59C2D50093ED22 /* MoviesResponse.swift in Sources */,
 				2F34458E2C59EB880093ED22 /* LoginView.swift in Sources */,
+				2F3445B22C6420160093ED22 /* MovieApiManager.swift in Sources */,
 				2F3445902C5AE4F50093ED22 /* FavMoviesManager.swift in Sources */,
 				2F3445822C59C36C0093ED22 /* MoviesGridView.swift in Sources */,
 			);

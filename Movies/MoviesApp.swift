@@ -13,11 +13,13 @@ struct MoviesApp: App {
     
     @State private var authManager: AuthManager
     @State private var favMoviesManager: FavMoviesManager
+    @State private var movieApiManager: MovieApiManager
     
     init() {
         FirebaseApp.configure()
         authManager = AuthManager()
         favMoviesManager = FavMoviesManager()
+        movieApiManager = MovieApiManager()
     }
     
     var body: some Scene {
@@ -27,6 +29,7 @@ struct MoviesApp: App {
                 TabsView()
                     .environment(authManager)
                     .environment(favMoviesManager)
+                    .environment(movieApiManager)
             } else {
 
                 // No logged in user, go to LoginView

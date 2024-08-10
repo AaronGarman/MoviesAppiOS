@@ -1,19 +1,34 @@
 HIGH
-- firebase database to add and delete movies, no update - manager obj made right in detail view? fig id and init movies as favs on app start
+- Clean up code - comments in + out - push code first + again after, func modifiers like public?
+- Fig update favs list with closure lab 4 or as observ obj when delete, or array as env obj?
 
 MEDIUM
-- favorite list setup just like reg - maybe same vc but pass in array? or copy paste. movie api new file as movie manager? or could do movie grid as its own view n reuse?
+- Change code + rules for each user own data - delete users n data first?
 
 LOW
-- top nav bar for now playing + upcoming movies - do as overlay? anchor at top - see gpt* - if do upcoming, change released v release in detail view? 2nd tab just like now playing but with upcoming endpoint
-
+- Fig progress load or placeholder size diff for 5g - compare to parks lab reg n detail screens, on appear diff spot?
 
 GENERAL
-- comments in n out
-- less hard coded values?
+- comments in + out - end
+- which files no push? ask gpt - notes, user binary, ds store, directory one swift ui?
+- new repo + pin
+
+--------------------
+
+MAYBE
+- upper nav bar - do in tabs view or in grid view reg? depends on if want in favs or not. now playing + upcoming, anchor at top, maybe top tabs view? Release vs released in detail view
+- api values optionals
+- no black font, just diff tint? why blue?
 
 EXTRA
+- less hard coded values?
 - 3rd tab w/ map view for theaters - map points of interest built in?
 - multiple pages pull from api?
-- no push + delete user file binary, notes here, and ds store? other swift ui file too like directory one?
-- make api values optionals?
+- account tab for profile and settings?
+- leave comments + reviews
+- more use from API?
+- check flixster app for ideas
+- update data on restart from API - pull new values n replace objs in array if diff + sort by release date newest first or oldest?
+- app icon
+- splash screen
+- Fig favs view - keep as is vs just new view w/ copy, env pass ok? vs reg pass in? vs obs obj array?

@@ -11,7 +11,7 @@ struct MoviesResponse: Decodable {
     let results: [Movie]    // movie API endpoint returns array of movie objects
 }
 
-struct Movie: Codable, Identifiable, Hashable {
+struct Movie: Codable, Identifiable, Hashable, Equatable {
     let id: Int
     let title: String
     let releaseDate: String// was string, try Date?
@@ -20,9 +20,9 @@ struct Movie: Codable, Identifiable, Hashable {
     let posterPath: String
     let backdropPath: String
     
-    var movieId: String { // maybe this as id somehow?
+ /*   var movieId: String { // maybe this as id somehow?
         String(id)
-    }
+    } */
     
     // convert date to desired format
     

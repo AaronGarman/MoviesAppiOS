@@ -42,10 +42,13 @@ struct MovieDetailView: View {
                                         .tint(.red)
                                 }
                                 .onAppear {
+                                    isFavorite = favMoviesManager.favMovies.contains(where: { $0.id == movie.id })
+                                }
+                                /*.onAppear {
                                     if favMoviesManager.favMovies.contains(movie) {
                                         isFavorite = true
                                     }
-                                }
+                                } */
                             }
                             .padding([.trailing, .bottom], 12)
                         }
