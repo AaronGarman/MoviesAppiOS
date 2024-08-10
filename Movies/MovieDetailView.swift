@@ -54,6 +54,7 @@ struct MovieDetailView: View {
                         }
                 } placeholder: {
                     Color(.systemGray4)
+                        .frame(height: 250) // for less screen movement on rendering
                 }
                 HStack(alignment: .top) {
                     let urlString = URL(string:"https://image.tmdb.org/t/p/w500" + movie.posterPath)

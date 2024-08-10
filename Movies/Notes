@@ -6,7 +6,7 @@ MEDIUM
 - Change code + rules for each user own data - delete users n data first?
 
 LOW
-- Fig progress load or placeholder size diff for 5g - compare to parks lab reg n detail screens, on appear diff spot?
+
 
 GENERAL
 - comments in + out - end
@@ -20,6 +20,7 @@ MAYBE
 - api values optionals
 - no black font, just diff tint? why blue?
 - Fig favs view - keep as is vs just new view w/ copy, env pass ok? vs reg pass in? vs obs obj array?
+- Fig progress load or placeholder size diff for 5g - compare to parks lab reg n detail screens, on appear diff spot?
 
 EXTRA
 - less hard coded values?
