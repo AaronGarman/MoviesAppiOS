@@ -13,6 +13,8 @@ struct MovieDetailView: View {
     @Environment(FavMoviesManager.self) var favMoviesManager
     @State var isFavorite = false
     
+    @Binding var movies: [Movie]
+    
     let movie: Movie
     
     var body: some View {
@@ -36,6 +38,14 @@ struct MovieDetailView: View {
                                     else {
                                         favMoviesManager.deleteFavMovie(movie: movie)
                                     }
+                                    
+                                    // will this not work on reg screen tho?
+                                    if movies == favMoviesManager.favMovies { // any reason not to work? reference not contents so ok?
+                                        movies.removeAll { $0.id == movie.id }
+                                        //favMoviesManager.getFavMovies()
+                                        //movies = favMoviesManager.favMovies
+                                    }
+                                    
                                 } label: {
                                     Image(systemName: isFavorite ? "heart.fill" : "heart")
                                         .imageScale(.large)
@@ -107,7 +117,7 @@ struct MovieDetailView: View {
 }
 
 #Preview {
-    MovieDetailView(movie: Movie(id: 1022789,
+    MovieDetailView(movies: .constant([]), movie: Movie(id: 1022789,
                                  title: "Inside Out 2",
                                  releaseDate: "2024-06-11",
                                  overview: "Teenager Riley's mind headquarters is undergoing a sudden demolition to make room for something entirely unexpected: new Emotions! Joy, Sadness, Anger, Fear and Disgust, who’ve long been running a successful operation by all accounts, aren’t sure how to feel when Anxiety shows up. And it looks like she’s not alone.",

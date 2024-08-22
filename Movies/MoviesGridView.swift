@@ -41,7 +41,7 @@ struct MoviesGridView: View {
                 .padding(.trailing, 12)
                 .navigationTitle("Movies")
                 .navigationDestination(for: Movie.self) { movie in
-                    MovieDetailView(movie: movie)
+                    MovieDetailView(movies: $movies, movie: movie)
                         .environment(favMoviesManager)
                 }
                 .toolbar {
@@ -62,6 +62,7 @@ struct MoviesGridView: View {
             }
             else {
                 movies = favMoviesManager.favMovies // this needs to get updated after delete, closure or observed?
+                print("hello") // see if prints when going back from detail. also restart mac slow
             }
         })
     }
