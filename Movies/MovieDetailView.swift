@@ -32,20 +32,33 @@ struct MovieDetailView: View {
                                     .foregroundStyle(.white)
                                 Button {
                                     isFavorite.toggle()
+                                    
+                                    // any way add/delete/check both array n db together?
+                                    
                                     if isFavorite {
+                                        
+                                        if movies == favMoviesManager.favMovies {
+                                            // put check because spam button sometimes leaves in? diff cause of this?
+                                            /*if !movies.contains(where: { $0.id == movie.id }) {
+                                                movies.append(movie)
+                                            } */
+                                            movies.append(movie) // if spam button sometimes will keep fav in even if not checked?
+                                        }
+                                        // try do db stuff after so state updates first
                                         favMoviesManager.saveFavMovie(movie: movie)
                                     }
                                     else {
+                                        
+                                        // will this not work on reg screen tho?
+                                        if movies == favMoviesManager.favMovies { // any reason not to work? reference not contents so ok?
+                                            movies.removeAll { $0.id == movie.id }
+                                            //favMoviesManager.getFavMovies()
+                                            //movies = favMoviesManager.favMovies
+                                        }
+                                        // try do db stuff after so state updates first
                                         favMoviesManager.deleteFavMovie(movie: movie)
                                     }
-                                    
-                                    // will this not work on reg screen tho?
-                                    if movies == favMoviesManager.favMovies { // any reason not to work? reference not contents so ok?
-                                        movies.removeAll { $0.id == movie.id }
-                                        //favMoviesManager.getFavMovies()
-                                        //movies = favMoviesManager.favMovies
-                                    }
-                                    
+                                   // could try db funcs as async like api?
                                 } label: {
                                     Image(systemName: isFavorite ? "heart.fill" : "heart")
                                         .imageScale(.large)
@@ -106,7 +119,8 @@ struct MovieDetailView: View {
                     .padding(.leading, 8)
                     Spacer()
                 }
-                Text("\(favMoviesManager.favMovies.count)") // movie.overview
+                //Text("\(favMoviesManager.favMovies.count)") // movie.overview
+                Text("\(movie.overview)")
                     .padding([.top, .leading, .trailing], 16)
             }
             .padding(.top, 4)
