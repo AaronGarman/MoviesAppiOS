@@ -34,6 +34,8 @@ struct MovieDetailView: View {
                                     isFavorite.toggle()
                                     
                                     // any way add/delete/check both array n db together?
+                                    // should state and db array be diff?
+                                    // if spam button 3+ times will sometimes keep in even if unfaved, fig why? keeps in array but not db - state issue not db? what if just dropped requests from click overload msg in console?
                                     
                                     if isFavorite {
                                         
@@ -50,7 +52,7 @@ struct MovieDetailView: View {
                                     else {
                                         
                                         // will this not work on reg screen tho?
-                                        if movies == favMoviesManager.favMovies { // any reason not to work? reference not contents so ok?
+                                        if movies == favMoviesManager.favMovies { // any reason not to work? reference not contents so ok? diff way to check if in favs?
                                             movies.removeAll { $0.id == movie.id }
                                             //favMoviesManager.getFavMovies()
                                             //movies = favMoviesManager.favMovies
