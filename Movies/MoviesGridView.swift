@@ -62,7 +62,7 @@ struct MoviesGridView: View {
             }
             else {
                 movies = favMoviesManager.favMovies // this needs to get updated after delete, closure or observed?
-                print("hello") // see if prints when going back from detail. also restart mac slow
+                //print("hello") // see if prints when going back from detail. also restart mac slow
             }
         })
     }

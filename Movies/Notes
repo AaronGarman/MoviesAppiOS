@@ -22,6 +22,8 @@ MAYBE
 - Fig favs view - keep as is vs just new view w/ copy, env pass ok? vs reg pass in? vs obs obj array?
 - Fig progress load or placeholder size diff for 5g - compare to parks lab reg n detail screens, on appear diff spot?
 
+Unfav fig - closure, = arr, or gpt, or binding
+
 EXTRA
 - less hard coded values?
 - 3rd tab w/ map view for theaters - map points of interest built in?

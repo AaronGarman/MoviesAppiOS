@@ -35,7 +35,7 @@ struct MovieDetailView: View {
                                     
                                     // any way add/delete/check both array n db together?
                                     // should state and db array be diff?
-                                    // if spam button 3+ times will sometimes keep in even if unfaved, fig why? keeps in array but not db - state issue not db? what if just dropped requests from click overload msg in console?
+                                    // if spam button 3+ times will sometimes keep in even if unfaved, fig why? keeps in array but not db - state issue not db? what if just dropped requests from click overload msg in console? try debouncing? or inconsisten array data since changes so many times quickly?
                                     
                                     if isFavorite {
                                         
@@ -51,7 +51,7 @@ struct MovieDetailView: View {
                                     }
                                     else {
                                         
-                                        // will this not work on reg screen tho?
+                                        // will this not work on reg screen tho? only removes if on favs screen w/ favs list
                                         if movies == favMoviesManager.favMovies { // any reason not to work? reference not contents so ok? diff way to check if in favs?
                                             movies.removeAll { $0.id == movie.id }
                                             //favMoviesManager.getFavMovies()
@@ -67,6 +67,9 @@ struct MovieDetailView: View {
                                         .tint(.red)
                                 }
                                 .onAppear {
+                                    /*if movies == favMoviesManager.favMovies {
+                                        movies = favMoviesManager.favMovies
+                                    }*/
                                     isFavorite = favMoviesManager.favMovies.contains(where: { $0.id == movie.id })
                                 }
                                 /*.onAppear {
